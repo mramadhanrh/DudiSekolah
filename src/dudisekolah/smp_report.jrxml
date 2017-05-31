@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5432356e-db75-439c-8915-d2fbd3c4c6ad">
+	<property name="ireport.zoom" value="1.1000000000000045"/>
+	<property name="ireport.x" value="55"/>
+	<property name="ireport.y" value="65"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT nama_sekolah, COUNT(*) as banyak_siswa FROM t_sekolah INNER JOIN t_siswa ON t_sekolah.id_sekolah = t_siswa.id_sekolah GROUP BY t_sekolah.id_sekolah]]>
+	</queryString>
+	<field name="nama_sekolah" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="banyak_siswa" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="120" backcolor="#FF6000" uuid="2c51a653-b389-4fda-92fd-bda85c1a05b7"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="33" y="11" width="126" height="99" uuid="38e097bd-ff7c-4fee-8874-ef1bf359d1e4"/>
+				<imageExpression><![CDATA["C:\\Users\\Ramadhan\\Documents\\NetBeansProjects\\DudiSekolah\\src\\dudisekolah\\logo-smk2.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="159" y="20" width="372" height="48" forecolor="#FFFFFF" uuid="56163694-0b66-40eb-9b44-f5bb0ffcda9d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Roboto Black" size="26"/>
+				</textElement>
+				<text><![CDATA[SMK NEGERI 4 BANDUNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="68" width="278" height="35" forecolor="#FFFFFF" uuid="47c2e834-7f10-4365-a49d-84390ef7be19"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Roboto Black" size="16"/>
+				</textElement>
+				<text><![CDATA[LAPORAN SISWA SMP YANG MASUK ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="35" forecolor="#333333" backcolor="#333333" uuid="0405a090-b401-460c-a4d7-9ce9da94c19c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="159" y="0" width="278" height="35" forecolor="#FFFFFF" uuid="1c8b9b3d-8b28-4b1d-8bba-e9e8db50fab6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Roboto Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Tahun 2013-2014]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="341" y="0" width="214" height="20" forecolor="#333333" backcolor="#FF6000" uuid="287749ed-b23b-4d51-b1fb-90f948d70c85"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="341" height="20" forecolor="#333333" backcolor="#FF6000" uuid="4ff78ce5-03cb-42e5-af9f-504cea0d9166"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="126" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="8553c534-4f77-486f-a2e4-a87c1293983f"/>
+				<textElement>
+					<font fontName="Roboto Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Nama Sekolah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="148" height="20" forecolor="#FFFFFF" uuid="aa0df1db-ad45-4542-be66-5a9fc7f3fc21"/>
+				<textElement>
+					<font fontName="Roboto Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Banyak Siswa Masuk]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="341" y="0" width="214" height="20" forecolor="#333333" backcolor="#333333" uuid="d28db547-a659-4bbf-99dd-65643ca8bd7f"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="116" y="0" width="120" height="20" forecolor="#333333" uuid="c0869a7c-16ce-4b0e-87b3-24a56acb1874"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Roboto Thin" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_sekolah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="0" width="128" height="20" forecolor="#FFFFFF" uuid="89900cf1-9673-476c-a04c-f17c8f1f4000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Roboto Medium" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{banyak_siswa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="341" height="1" uuid="7cc80903-8990-46c0-907e-1c69f992d04a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="32" backcolor="#FF6000" uuid="3fac4936-495e-4025-8dd3-1a709d6f68ea"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="226" y="0" width="319" height="32" forecolor="#FFFFFF" uuid="a1006b30-8311-43d4-aa94-5e7192399ca9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Roboto" size="15"/>
+				</textElement>
+				<text><![CDATA[M Ramadhan R & Michael Faizal]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
